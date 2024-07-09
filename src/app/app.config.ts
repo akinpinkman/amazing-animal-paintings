@@ -7,12 +7,13 @@ import { provideRouter } from '@angular/router';
 import { ProductModule } from './product/product.module';
 import { HttpClientModule } from '@angular/common/http';
 import { routes } from './app.routes';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     importProvidersFrom(ProductModule),
-    importProvidersFrom(HttpClientModule),
+    importProvidersFrom(HttpClientModule), provideAnimationsAsync(),
   ],
 };
