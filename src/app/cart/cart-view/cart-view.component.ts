@@ -8,13 +8,13 @@ import { Product } from '../../models/product';
   styleUrl: './cart-view.component.css',
 })
 export class CartViewComponent implements OnInit {
-  cardItems: Product[] = [];
+  cartItems: Product[] = [];
 
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     this.cartService.getCartItems().subscribe((data) => {
-      this.cardItems = data;
+      this.cartItems = data;
     });
   }
 }
