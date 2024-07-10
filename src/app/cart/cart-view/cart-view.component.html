@@ -6,6 +6,21 @@
                 <span matListItemTitle>{{item.name}}</span>
                 <span matListItemTitle>{{item.price | currency:"USD"}}</span>
             </mat-list-item>
+
+            <mat-list-item>
+                <span class="price" matListItemTitle>Toplam (USD)</span>
+                <span class="price" matListItemTitle>{{totalPrice | currency:"USD"}}</span>
+            </mat-list-item>
+
+            <mat-list-item class="text-right">
+                <button (click)="clearCart()" mat-flat-button>Temizle</button>
+            </mat-list-item>
+
+            <mat-list-item class="text-right">
+                <button (click)="checkOut()" mat-flat-button>Ödemeye Geç</button>
+            </mat-list-item>
+
+
         </mat-list>
     </mat-card>
 </div>
